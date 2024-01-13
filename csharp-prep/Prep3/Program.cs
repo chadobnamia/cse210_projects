@@ -8,21 +8,21 @@ class Program
         // int userInput = int.Parse(Console.ReadLine());
         
         Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 101);
+        int randomNumber = randomGenerator.Next(1, 101);
 
-        int guess = -1;
+        int guessNumber = -1;
 
         // We could also use a do-while loop here...
-        while (guess != magicNumber)
+        while (guessNumber != randomNumber)
         {
             Console.Write("What is your guess? ");
-            guess = int.Parse(Console.ReadLine());
+            guessNumber = int.Parse(Console.ReadLine());
 
-            if (magicNumber > guess)
+            if (randomNumber > guessNumber)
             {
                 Console.WriteLine("Higher");
             }
-            else if (magicNumber < guess)
+            else if (randomNumber < guessNumber)
             {
                 Console.WriteLine("Lower");
             }
