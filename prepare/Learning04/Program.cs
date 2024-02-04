@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Assignment assign = new Assignment("Samuel Bennett", "Multiplcation");
+        Assignment assign = new Assignment("Samuel Bennett", "Multiplication");
         Console.WriteLine(assign.GetSummary());
 
         MathAssignment assign2 = new MathAssignment("Roberto Rodriguez", "Fractions", "7.3", "8-19");
