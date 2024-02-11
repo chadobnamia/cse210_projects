@@ -6,33 +6,42 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Menu Options:");
-            Console.WriteLine("1. Start breathing activity");
-            Console.WriteLine("2. Start reflecting activity");
-            Console.WriteLine("3. Start listing activity");
-            Console.WriteLine("4. Quit");
-        Console.WriteLine("Select a choice from the menu:");
-        string choice = Console.ReadLine();
-
-
-        switch(choice)
+        while (true)
         {
-            case "1":
-                Activity newActivity = new Activity("breathing","this",2);
-                newActivity.run(2);
-            break;
+            Console.Clear();
+            Console.WriteLine("Choose an activity:");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("3. Listing Activity");
+            Console.WriteLine("4. Quit");
 
-            case "2":
+            Console.Write("Enter your choice: ");
+            int choice = int.Parse(Console.ReadLine());
+            Console.Clear();
 
-            break;
+            switch (choice)
+            {
+                case 1:
+                    BreathingActivity breathing = new BreathingActivity();
+                    breathing.Run();
+                    break;
+                case 2:
+                     ReflectingActivity reflect = new ReflectingActivity();
+                     reflect.Run();
+                     break;
+                // case "3":
+                //     ListingActivity();
+                //     break;
+                case 4:
+                    Console.WriteLine("Goodbye!");
+                    return;
+                // default:
+                //     Console.WriteLine("Invalid choice. Please enter a number from 1 to 4.");
+                //     break;
+            }
 
-            case "3":
-
-            break;
-
-            case "4":
-            return;
-
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
     }
 }
