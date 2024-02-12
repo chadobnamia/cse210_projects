@@ -1,7 +1,7 @@
 public class Activity
 {
-    private string _name {get; set;}
-    private string _description {get; set;}
+    public string _name {get; set;}
+    public string _description {get; set;}
     public int _duration {get;set;}
 
     public Activity(string name, string description)
@@ -18,8 +18,8 @@ public class Activity
     }
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("Well Done!");
-        Console.WriteLine($"You have completed {_duration} seconds of {_name}.")
+        Console.WriteLine("\nWell Done!");
+        Console.WriteLine($"\nYou have completed {_duration} seconds of {_name}.");
     }
     public void ShowSpinner(int seconds)
     {
@@ -40,12 +40,11 @@ public class Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
 
-        int i = 0;
         while(DateTime.Now < endTime)
         {
-            Console.Write($"\r{i}\b");
+            Console.Write($"\r{seconds}\b");
             Thread.Sleep(1000); // Pause for 1 seconds
-            i++;
+            seconds--;
 
         }
 

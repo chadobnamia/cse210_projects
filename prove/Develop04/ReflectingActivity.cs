@@ -1,3 +1,5 @@
+using System.Data;
+
 public class ReflectingActivity:Activity
 {
     public List<string> _prompts = new List<string>
@@ -9,7 +11,7 @@ public class ReflectingActivity:Activity
     };
     public List<string> _questions = new List<string>
     {
-        "Why was this experience meaningful to you?",
+            "Why was this experience meaningful to you?",
             "Have you ever done anything like this before?",
             "How did you get started?",
             "How did you feel when it was complete?",
@@ -20,10 +22,13 @@ public class ReflectingActivity:Activity
             "How can you keep this experience in mind in the future?"
     };
 
-    public ReflectingActivity():base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
-    {}
+    public ReflectingActivity(string name, string description):base(name, description)
+    {
+
+    }
     public void Run()
     {
+        Console.Clear();
         DisplayStartingMessage();
 
         Console.WriteLine("\nHow long, in seconds, would you like for your session? ");
@@ -35,29 +40,36 @@ public class ReflectingActivity:Activity
         DisplayPrompt();
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
-
-            
-
+        Console.WriteLine("\nNow ponder on each of the following questions as they relate to your experience");
+        Console.WriteLine("You may begin in:");
+        ShowCountDown(5);
+        Console.Clear();
+        DisplayQuestion();
+        ShowSpinner(6);
+        DisplayQuestion();
+        ShowSpinner(6);
+        DisplayEndingMessage();
+        ShowSpinner(3);
 
     }
     public string GetRandomPrompt()
     {
-        Random newRand = new Random();
-        string prompt = _prompts[newRand.Next(_prompts.Count)];
-        return prompt;
+        var randPrompt = new Random();
+        int index = randPrompt.Next(_prompts.Count);
+        return _prompts[index];
     }
     public string GetRandomQuestion()
     {
-        Random newRand1 = new Random();
-        string question = _questions[newRand1.Next(_questions.Count)];
-        return question;
+        var randQuestion = new Random();
+        int index = randQuestion.Next(_questions.Count);
+        return _questions[index];
     }
     public void DisplayPrompt()
     {
-        GetRandomPrompt();
+        Console.WriteLine($"\n---{GetRandomPrompt()}---");
     }
     public void DisplayQuestion()
     {
-        GetRandomQuestion();
+        Console.WriteLine($"{GetRandomQuestion()}");
     }
 }
