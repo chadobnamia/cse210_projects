@@ -18,13 +18,8 @@ public class SimpleGoal : Goal
         return _isComplete;
     }
 
-    public override string GetDetailsString()
-    {
-        return $"{_shortName} - {_description}";
-    }
-
     public override string GetStringRepresentation()
     {
-        return $"{_shortName},{_description},{_points},{_isComplete}";
+        return $"SimpleGoal: {_shortName},{_description},{_points},{_isComplete}";
     }
 }

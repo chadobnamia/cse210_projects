@@ -35,9 +35,9 @@ class Program
                 case "4":
                     Console.WriteLine("Goodbye!");
                     return;
-                // cdefault:
-                //     Console.WriteLine("Invalid choice. Please enter a number from 1 to 4.");
-                //     break;
+                default:
+                Console.WriteLine("Invalid choice. Please enter a number from 1 to 4.");
+                break;
             }
 
             Console.WriteLine("\nPress Enter to return to the menu...");

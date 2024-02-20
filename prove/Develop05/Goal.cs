@@ -1,6 +1,5 @@
 public abstract class Goal
-{
-    protected string _shortName;
+{   protected string _shortName;
     protected string _description;
     protected int _points;
 
@@ -14,6 +13,9 @@ public abstract class Goal
     // Abstract methods
     public abstract void RecordEvent();
     public abstract bool IsComplete();
-    public abstract string GetDetailsString();
+    public virtual string GetDetailsString()
+    {
+        return $"{(IsComplete()?"[X]":"[ ]")}  {_shortName} ({_description})";
+    }
     public abstract string GetStringRepresentation();
 }
