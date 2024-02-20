@@ -30,13 +30,13 @@ class Program
         Console.WriteLine("Order 1 Packing Label:");
         Console.WriteLine(order1.GetPackingLabel());
         Console.WriteLine("Order 1 Shipping Label:");
-        Console.WriteLine(order1.GetShippingLabel());
+        // Console.WriteLine(order1.GetShippingLabel());
         Console.WriteLine($"Order 1 Total Price: ${order1.GetTotalPrice():F2}");
 
         Console.WriteLine("\nOrder 2 Packing Label:");
         Console.WriteLine(order2.GetPackingLabel());
         Console.WriteLine("Order 2 Shipping Label:");
-        Console.WriteLine(order2.GetShippingLabel());
+        // Console.WriteLine(order2.GetShippingLabel());
         Console.WriteLine($"Order 2 Total Price: ${order2.GetTotalPrice():F2}");
     }
 }

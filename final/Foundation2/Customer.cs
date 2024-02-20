@@ -1,4 +1,3 @@
-
 public class Customer
 {
     private string _customerName;
@@ -13,10 +12,5 @@ public class Customer
     public bool IsInUSA()
     {
         return _address.IsInUSA();
-    }
-
-    public static implicit operator string(Customer v)
-    {
-        throw new NotImplementedException();
     }
 }

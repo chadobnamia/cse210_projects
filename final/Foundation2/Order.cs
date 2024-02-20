@@ -3,7 +3,7 @@ using System.Reflection;
 public class Order
 {
     private List<Product> _products;
-    private string _customer;
+    protected Customer _customer{get;set;}
 
     public Order(Customer customer)
     {
@@ -39,14 +39,9 @@ public class Order
         string label = "";
         foreach (Product product in _products)
         {
-            label += $"Name: {product.name} ID: {product.productId}\n";
+            label += $"Name: {product._name} ID: {product.productId}\n";
         }
         return label;
     }
 
-    public string GetShippingLabel()
-    {
-        
-        return $"Name: {_customer}, Address: {_customer.Address.GetFullAddress()}";
-    }
 }
